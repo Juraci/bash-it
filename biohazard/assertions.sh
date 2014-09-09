@@ -15,10 +15,10 @@ failure() { log_it "[Command FAIL] ----: $*"; return 1; }
 # Description: verifies if the command passed as argument exists in 0
 # parameters: $* shell commands to be called
 verify_command() {
-  eval $*
+  eval "$@"
   if [ $? -eq 0 ] ; then
-    success $*
+    success "$@"
   else
-    failure $*
+    failure "$@"
   fi
 }
