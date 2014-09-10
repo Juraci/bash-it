@@ -3,6 +3,5 @@
 dir=${0%/*}               # gets the name of the current dir
 source $dir/assertions.sh # includes the assertions
 
-# passing commands to verity_command function
-assertions.verify_command apt-get -y update
-assertions.verify_command apt-get -y upgrade
+assertions.verify_command apt-get -y install vim
+assertions.verify_command vim --version
