@@ -14,9 +14,17 @@ failure() { logger.log_it "$@"; return 1; }
 # parameters: $@ shell commands to be called
 assertions.verify_command() {
   eval "$@"
-  if [ $? -eq 0 ] ; then
+  if [ $? -eq 0 ]; then
     success "[Command OK] ------: $@"
   else
     failure "[Command FAIL] ----: $@"
+  fi
+}
+
+assertions.directory_exists?() {
+  if [ -d $1 ]; then
+    success "[OK] Directory $1 exists"
+  else
+    failure "[FAIL] Directory $1 doesn't exist"
   fi
 }
