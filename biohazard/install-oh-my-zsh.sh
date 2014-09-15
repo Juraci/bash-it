@@ -26,6 +26,4 @@ fi
 
 assertions.verify_command wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 assertions.directory_exists? ~/.oh-my-zsh
-
 logger.log_it "[End] ---------- oh-my-zsh installation ----------"
-
