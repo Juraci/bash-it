@@ -9,7 +9,7 @@ fonts_dir="~/.fonts"
 fontconfig_dir="~/.config/fontconfig"
 fontconfig_file_dir="$fontconfig_dir/conf.d"
 
-logger.log_it "[Begin] ---------- agnoster configuration ----------"
+logger.log_it " ---------- agnoster configuration ----------"
 logger.log_it "[requirements test]"
 
 # oh-my-zsh needs to be installed
@@ -70,6 +70,4 @@ assertions.verify_command mv 10-powerline-symbols.conf "$fontconfig_file_dir/"
 assertions.verify_command perl -pi -e 's/robbyrussell/agnoster/g' ~/.zshrc
 assertions.verify_command sudo chsh -s /usr/bin/zsh
 
-# Logout and login for changes to take effect
-
-logger.log_it "[End] ---------- agnoster configuration ----------"
+echo "Logout and login for changes to take effect"

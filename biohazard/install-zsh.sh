@@ -5,8 +5,7 @@
 dir=${0%/*}
 source $dir/assertions.sh
 
-logger.log_it "[Begin] ---------- ZSH installation ----------"
+logger.log_it "---------- ZSH installation ----------"
 assertions.verify_command apt-get -y install zsh
 assertions.verify_command zsh --version
 assertions.verify_command chsh -s /usr/bin/zsh
-logger.log_it "[End] ---------- ZSH installation ----------"

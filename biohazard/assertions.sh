@@ -21,10 +21,22 @@ assertions.verify_command() {
   fi
 }
 
+# Description: verifies if the directory exists
+# parameters: $1 directory path to be verified
 assertions.directory_exists?() {
   if [ -d $1 ]; then
     success "[OK] Directory $1 exists"
   else
     failure "[FAIL] Directory $1 doesn't exist"
+  fi
+}
+
+# Description: verifies if the file exists
+# parameters: $1 file path to be verified
+assertions.file_exists?() {
+  if [ -f $1 ]; then
+    success "[OK] File $1 exists"
+  else
+    failure "[FAIL] File $1 doesn't exist"
   fi
 }

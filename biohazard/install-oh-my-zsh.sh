@@ -5,7 +5,7 @@
 dir=${0%/*}
 source $dir/assertions.sh
 
-logger.log_it "[Begin] ---------- oh-my-zsh installation ----------"
+logger.log_it "---------- oh-my-zsh installation ----------"
 logger.log_it "[requirements test]"
 
 # oh-my-zsh requires zsh shell to be installed
@@ -26,4 +26,3 @@ fi
 
 assertions.verify_command wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 assertions.directory_exists? ~/.oh-my-zsh
-logger.log_it "[End] ---------- oh-my-zsh installation ----------"

@@ -1,9 +1,12 @@
 #!/bin/bash
-# Sample script to automatically install Java 8
+# What: Java 8 installation
+# How to: http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html
+# Version tested: Ubuntu 14.04 LTS
 dir=${0%/*}
 source $dir/assertions.sh
 
-# pass any command you want to verity_command function
+logger.log_it "---------- Java 8 installation ----------"
+
 assertions.verify_command apt-get -y install python-software-properties
 assertions.verify_command add-apt-repository -y ppa:webupd8team/java
 assertions.verify_command apt-get -y update
