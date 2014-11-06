@@ -8,4 +8,6 @@ source $dir/assertions.sh
 logger.log_it "---------- ZSH installation ----------"
 assertions.verify_command apt-get -y install zsh
 assertions.verify_command zsh --version
-assertions.verify_command chsh -s /usr/bin/zsh
+assertions.verify_command perl -pi -e 'print "auth       sufficient   pam_wheel.so trust group=chsh\n" if $. == 1' /etc/pam.d/chsh
+assertions.verify_command groupadd chsh
+assertions.verify_command usermod -a -G chsh <user>

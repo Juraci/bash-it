@@ -68,6 +68,6 @@ assertions.verify_command mv PowerlineSymbols.otf $fonts_dir
 assertions.verify_command fc-cache -vf $fonts_dir
 assertions.verify_command mv 10-powerline-symbols.conf "$fontconfig_file_dir/"
 assertions.verify_command perl -pi -e 's/robbyrussell/agnoster/g' ~/.zshrc
-assertions.verify_command sudo chsh -s /usr/bin/zsh
+assertions.verify_command chsh -s `which zsh`
 
 echo "Logout and login for changes to take effect"
