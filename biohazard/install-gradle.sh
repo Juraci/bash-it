@@ -12,7 +12,7 @@ logger.log_it "[requirements test]"
 assertions.verify_command java -version
 java=$?
 
-assertions.verify_command "dpkg --list | grep '(JDK) [6-9]'"
+assertions.verify_command "dpkg --list | grep '(JDK) [6-8]'"
 jdk_version=$?
 
 if [[ $java -ne 0 || $jdk_version -ne 0 ]]; then
@@ -22,5 +22,5 @@ fi
 
 assertions.verify_command add-apt-repository -y ppa:cwchien/gradle
 assertions.verify_command apt-get -y update
-assertions.verify_command apt-get install gradle
+assertions.verify_command apt-get -y install gradle
 assertions.verify_command gradle --version
